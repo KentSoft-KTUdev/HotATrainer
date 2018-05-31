@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace HotATrainer
 {
@@ -56,12 +57,31 @@ namespace HotATrainer
                 StonesText.Invoke(() => StonesText.Text = String.Format("Stones ({0})", GameMemoryAdresses.GetPlayerStones()));
                 SulfurText.Invoke(() => SulfurText.Text = String.Format("Sulfur ({0})", GameMemoryAdresses.GetPlayerSulfur()));
                 GoldText.Invoke(() => GoldText.Text = String.Format("Gold ({0})", GameMemoryAdresses.GetPlayerGold()));
+                Thread.Sleep(60000);
             }
         }
 
         private void SubmitResources_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                GameMemoryAdresses.SetPlayerWood(int.Parse(Wood.Text, System.Globalization.NumberStyles.Integer));
+                GameMemoryAdresses.SetPlayerSulfur(int.Parse(Sulfur.Text, System.Globalization.NumberStyles.Integer));
+                GameMemoryAdresses.SetPlayerStones(int.Parse(Stones.Text, System.Globalization.NumberStyles.Integer));
+                GameMemoryAdresses.SetPlayerMercury(int.Parse(Mercury.Text, System.Globalization.NumberStyles.Integer));
+                GameMemoryAdresses.SetPlayerGold(int.Parse(Gold.Text, System.Globalization.NumberStyles.Integer));
+                GameMemoryAdresses.SetPlayerCrystals(int.Parse(Crystals.Text, System.Globalization.NumberStyles.Integer));
+                GameMemoryAdresses.SetPlayerGems(int.Parse(Gems.Text, System.Globalization.NumberStyles.Integer));
+            }
+            catch(Exception ex)
+            {
+                if(ex is ArgumentNullException)
+                    this.ShowMessageAsync("Input error...", "All of resources inputs has to filled with integers", MessageDialogStyle.Affirmative);
+                if (ex is ArgumentException)
+                    this.ShowMessageAsync("Input error...", "Resource inputs must be numeric values", MessageDialogStyle.Affirmative);
+                if (ex is FormatException)
+                    this.ShowMessageAsync("Input error...", "Inputted values were in wrong format", MessageDialogStyle.Affirmative);
+            }
         }
     }
 }

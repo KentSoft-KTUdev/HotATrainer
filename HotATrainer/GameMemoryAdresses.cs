@@ -65,5 +65,61 @@ namespace HotATrainer
             int crystalsAddress = player + PlayerCrystals;
             return App.ProcessesMem.ReadInt32((IntPtr)crystalsAddress);
         }
+
+        public static void SetPlayerGold(int amount)
+        {
+            int player = App.ProcessesMem.ReadInt32((IntPtr)PlayerBase);
+            int goldAddress = player + PlayerGold;
+            App.ProcessesMem.WriteInt32((IntPtr)goldAddress, amount);
+        }
+
+        public static void SetPlayerWood(int amount)
+        {
+            int player = App.ProcessesMem.ReadInt32((IntPtr)PlayerBase);
+            int woodAddress = player + PlayerWood;
+            App.ProcessesMem.WriteInt32((IntPtr)woodAddress, amount);
+        }
+
+        public static void SetPlayerMercury(int amount)
+        {
+            int player = App.ProcessesMem.ReadInt32((IntPtr)PlayerBase);
+            int mercuryAddress = player + PlayerMercury;
+            App.ProcessesMem.WriteInt32((IntPtr)mercuryAddress, amount);
+        }
+
+        public static void SetPlayerStones(int amount)
+        {
+            int player = App.ProcessesMem.ReadInt32((IntPtr)PlayerBase);
+            int stonesAddress = player + PlayerStones;
+            App.ProcessesMem.WriteInt32((IntPtr)stonesAddress, amount);
+        }
+
+        public static void SetPlayerSulfur(int amount)
+        {
+            int player = App.ProcessesMem.ReadInt32((IntPtr)PlayerBase);
+            int sulfurAddress = player + PlayerSulfur;
+            App.ProcessesMem.WriteInt32((IntPtr)sulfurAddress, amount);
+        }
+
+        public static void GetPlayerGems(int amount)
+        {
+            int player = App.ProcessesMem.ReadInt32((IntPtr)PlayerBase);
+            int gemsAddress = player + PlayerGems;
+            App.ProcessesMem.WriteInt32((IntPtr)gemsAddress, amount);
+        }
+
+        public static void SetPlayerCrystals(int amount)
+        {
+            int player = App.ProcessesMem.ReadInt32((IntPtr)PlayerBase);
+            int crystalsAddress = player + PlayerCrystals;
+            App.ProcessesMem.WriteInt32((IntPtr)crystalsAddress, amount);
+        }
+
+        public static void SetPlayerGems(int amount)
+        {
+            int player = App.ProcessesMem.ReadInt32((IntPtr)PlayerBase);
+            int gemsAddress = player + PlayerGems;
+            App.ProcessesMem.WriteInt32((IntPtr)gemsAddress, amount);
+        }
     }
 }

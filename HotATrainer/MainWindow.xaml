@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="MainWindow" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
-    <Grid x:Name="MainGrid">
+    <Grid x:Name="MainGrid" Margin="0,5,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
             <RowDefinition Height="1*"/>
@@ -16,5 +16,47 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid x:Name="InGameResources">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="In game resources" />
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Wood.png"/>
+                <TextBlock Grid.Column="0" Text="Wood" HorizontalAlignment="Center"/>
+                <TextBox  Grid.Column="0" x:Name="Wood" TextAlignment="Center" MaxHeight="28" Margin="35,0,0,0"/>
+                <Image Grid.Column="1" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Mercury.png" Margin="0,0,5,0"/>
+                <TextBlock Grid.Column="1" Text="Mercury" HorizontalAlignment="Center"/>
+                <TextBox Grid.Column="1" x:Name="Mercury" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBlock Grid.Column="2" Text="Sulfur" HorizontalAlignment="Center"/>
+                <Image Grid.Column="2" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Sulfur.png"/>
+                <TextBox Grid.Column="2" x:Name="Sulfur" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Crystals" HorizontalAlignment="Center"/>
+                <Image Grid.Column="0" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Crystal.gif"/>
+                <TextBox Grid.Column="0" x:Name="Crystals" TextAlignment="Center" MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="Stones" HorizontalAlignment="Center"/>
+                <Image Grid.Column="1" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Stone.png"/>
+                <TextBox Grid.Column="1" x:Name="Stones" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBlock Grid.Column="2" Text="Gems" HorizontalAlignment="Center"/>
+                <Image Grid.Column="2" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Gems.gif"/>
+                <TextBox Grid.Column="2" x:Name="Gems" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Controls:MetroWindow>

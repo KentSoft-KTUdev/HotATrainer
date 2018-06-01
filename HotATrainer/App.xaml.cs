@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.ComponentModel;
+using Memory;
 
 namespace HotATrainer
 {
@@ -15,6 +16,11 @@ namespace HotATrainer
     public partial class App : Application
     {
         public static VAMemory ProcessesMem = new VAMemory("h3hota");
+        public static Mem proccessWorker = new Mem
+        {
+
+        };
+
         public static BackgroundWorker BackgroundWorker = new BackgroundWorker
         {
            WorkerReportsProgress = true,

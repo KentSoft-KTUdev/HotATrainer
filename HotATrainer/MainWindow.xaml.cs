@@ -24,6 +24,7 @@ namespace HotATrainer
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        private System.Timers.Timer timer = new System.Timers.Timer(200);
         public MainWindow()
         {
             InitializeComponent();
@@ -57,7 +58,6 @@ namespace HotATrainer
                 StonesText.Invoke(() => StonesText.Text = String.Format("Stones ({0})", GameMemoryAdresses.GetPlayerStones()));
                 SulfurText.Invoke(() => SulfurText.Text = String.Format("Sulfur ({0})", GameMemoryAdresses.GetPlayerSulfur()));
                 GoldText.Invoke(() => GoldText.Text = String.Format("Gold ({0})", GameMemoryAdresses.GetPlayerGold()));
-                Thread.Sleep(60000);
             }
         }
 
@@ -82,6 +82,25 @@ namespace HotATrainer
                 if (ex is FormatException)
                     this.ShowMessageAsync("Input error...", "Inputted values were in wrong format", MessageDialogStyle.Affirmative);
             }
+        }
+
+        private void InfMovement_IsCheckedChanged(object sender, EventArgs e)
+        {
+            if ((bool)InfMovement.IsChecked)
+            {
+                timer.Start();
+                timer.Elapsed += Timer_Elapsed;
+            }
+            else if ((bool)!InfMovement.IsChecked)
+            {
+                timer.Stop();
+                GameMemoryAdresses.SetPlayerAvailableMovement(0);
+            }
+        }
+
+        private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            GameMemoryAdresses.SetPlayerAvailableMovement(float.MaxValue);
         }
     }
 }

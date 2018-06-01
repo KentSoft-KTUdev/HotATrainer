@@ -33,13 +33,13 @@
                 </Grid.ColumnDefinitions>
                 <Image Grid.Column="0" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Wood.png"/>
                 <TextBlock Grid.Column="0" x:Name="WoodText" Text="Wood" HorizontalAlignment="Center"/>
-                <TextBox  Grid.Column="0" x:Name="Wood" TextAlignment="Center" MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBox Controls:TextBoxHelper.ClearTextButton="True" Grid.Column="0" x:Name="Wood" TextAlignment="Center" MaxHeight="28" Margin="35,0,0,0"/>
                 <Image Grid.Column="1" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Mercury.png" Margin="0,0,5,0"/>
                 <TextBlock Grid.Column="1" x:Name="MercuryText" Text="Mercury" HorizontalAlignment="Center"/>
-                <TextBox Grid.Column="1" x:Name="Mercury" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBox Controls:TextBoxHelper.ClearTextButton="True" Grid.Column="1" x:Name="Mercury" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
                 <TextBlock Grid.Column="2" x:Name="SulfurText" Text="Sulfur" HorizontalAlignment="Center"/>
                 <Image Grid.Column="2" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Sulfur.png"/>
-                <TextBox Grid.Column="2" x:Name="Sulfur" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBox Controls:TextBoxHelper.ClearTextButton="True" Grid.Column="2" x:Name="Sulfur" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
@@ -49,13 +49,13 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" x:Name="CrystalsText" Text="Crystals" HorizontalAlignment="Center"/>
                 <Image Grid.Column="0" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Crystal.gif"/>
-                <TextBox Grid.Column="0" x:Name="Crystals" TextAlignment="Center" MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBox Controls:TextBoxHelper.ClearTextButton="True" Grid.Column="0" x:Name="Crystals" TextAlignment="Center" MaxHeight="28" Margin="35,0,0,0"/>
                 <TextBlock Grid.Column="1" x:Name="StonesText" Text="Stones" HorizontalAlignment="Center"/>
                 <Image Grid.Column="1" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Stone.png"/>
-                <TextBox Grid.Column="1" x:Name="Stones" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBox Controls:TextBoxHelper.ClearTextButton="True" Grid.Column="1" x:Name="Stones" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
                 <TextBlock Grid.Column="2" x:Name="GemsText" Text="Gems" HorizontalAlignment="Center"/>
                 <Image Grid.Column="2" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Gems.gif"/>
-                <TextBox Grid.Column="2" x:Name="Gems" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBox Controls:TextBoxHelper.ClearTextButton="True" Grid.Column="2" x:Name="Gems" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
@@ -64,8 +64,26 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" x:Name="GoldText" Text="Gold" HorizontalAlignment="Center"/>
                 <Image Grid.Column="0" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Gold.gif"/>
-                <TextBox Grid.Column="0" x:Name="Gold" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+                <TextBox Controls:TextBoxHelper.ClearTextButton="True" Grid.Column="0" x:Name="Gold" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
                 <Button x:Name="SubmitResources" Content="Set resources" MaxHeight="40" MaxWidth="220" Grid.Column="1" Click="SubmitResources_Click"/>
+            </Grid>
+            <Grid Grid.Row="4" Margin="3,0,0,0" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Column="0" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Attack.png"/>
+                <Controls:NumericUpDown Grid.Column="0" x:Name="Attack" TextAlignment="Center" MaxHeight="28" Margin="35,0,0,0"/>
+                <Image Grid.Column="0" Grid.Row="1" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Defense.png"/>
+                <Controls:NumericUpDown Grid.Row="1" Grid.Column="0" x:Name="Defense" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+                <Image Grid.Column="1" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Power.png"/>
+                <Controls:NumericUpDown Grid.Column="1" x:Name="Power" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
+                <Image Grid.Column="1" Grid.Row="1" Height="35" Width="35" HorizontalAlignment="Left" Source="images/Knowledge.png"/>
+                <Controls:NumericUpDown Grid.Column="1" Grid.Row="1" x:Name="Knowlegde" TextAlignment="Center"  MaxHeight="28" Margin="35,0,0,0"/>
             </Grid>
         </Grid>
     </Grid>
